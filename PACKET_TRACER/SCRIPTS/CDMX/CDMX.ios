@@ -1,0 +1,39 @@
+! Enable
+enable
+
+! Configure terminal
+configure terminal
+
+! Set hostname
+hostname CDMX
+
+! VLAN Configuration Example
+
+! Create VLAN 10 and assign a name
+vlan 10
+ name Ventas
+
+! Create VLAN 20 and assign a name
+vlan 20
+ name Finanzas
+
+! Create VLAN 30 and assign a name
+vlan 30
+ name IT
+
+! Assign interfaces to VLANs
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 30
+
+! Save configuration
+end
+write memory
